@@ -63,8 +63,6 @@ public class SeleniumWebDriverUtils {
     public void startDriver(String baseUrl) {
         try {
             proxy.setNoProxy("takealot*");
-
-            System.setProperty("webdriver.chrome.driver", "D:/Personal Info/projects/senior-sdet-tech-test1/drivers/chromedriver.exe");
             driver = new ChromeDriver(setChromeOptions());
 
             setURL(baseUrl);
@@ -91,7 +89,7 @@ public class SeleniumWebDriverUtils {
      * Configures the variables for the Chromedriver
      */
     private ChromeOptions setChromeOptions() {
-//        WebDriverManager.getInstance(CHROME).setup();
+        WebDriverManager.getInstance(CHROME).setup();
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.setCapability(CapabilityType.OVERLAPPING_CHECK_DISABLED, false);
         chromeOptions.setCapability(CapabilityType.ELEMENT_SCROLL_BEHAVIOR, true);
@@ -117,7 +115,6 @@ public class SeleniumWebDriverUtils {
      */
     public void shutdown() {
         try {
-            driver.get(getLogoutUrl());
             driver.quit();
             log.info("Driver shutting down");
         } catch (Exception ex) {

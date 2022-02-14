@@ -48,5 +48,7 @@ public class TakealotTest {
         String actualResult = driver.getText("#shopfront-app > div.grid-container.cart.cart-content-module_cart_3W93Z > div.grid-x.cart-content-module_cart-container_1ucKG > section > div:nth-child(2) > div.cell.auto.small-order-2.large-order-1 > div:nth-child(1) > div > div > article > div > div > div.cell.auto > div > div:nth-child(1) > div > div.cell.small-12.medium-auto > div:nth-child(1) > div > a > h3", "css");
         Assert.assertEquals(actualResult, expectedResult);
         //endregion
+
+        driver.shutdown();
     }
 }
