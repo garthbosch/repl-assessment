@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Takealot Test Suite">
+
+    <test name="Takealot Test Case" enabled="true">
+        <parameter name="url" value="https://www.takealot.com/"/>
+
+        <classes>
+            <class name="repl.TakealotTest"/>
+        </classes>
+    </test>
+</suite>
